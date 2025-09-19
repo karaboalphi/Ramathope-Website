@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parent Dashboard - Ramathope High School</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;line-height:1.5;color:#222;background:#f9fafc}
+    header{background:linear-gradient(90deg,#0b6b3a,#063970);color:#fff;padding:1rem;text-align:center}
+    nav a{color:#fff;margin:0 .5rem;text-decoration:none}
+    main{max-width:1100px;margin:1rem auto;padding:1rem}
+    h1{margin:.25rem 0}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1rem}
+    .card{background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:1rem}
+    .card h2{margin-top:0;color:#063970}
+    ul{padding-left:1.2rem}
+    footer{background:#f7f7f7;color:#555;text-align:center;padding:1rem;margin-top:2rem}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Parent Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="announcement.html">Announcements</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Welcome, Parent/Guardian</h2>
+    <p>This dashboard allows you to view your child’s academic performance, recent announcements, attendance, and upcoming events.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Student Performance</h2>
+        <p><strong>Learner:</strong> Karabo Alpheus</p>
+        <ul>
+          <li>Mathematics — 78%</li>
+          <li>English — 80%</li>
+          <li>Life Sciences — 74%</li>
+          <li>Geography — 82%</li>
+          <li>Life Orientation — 88%</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Attendance</h2>
+        <p>Attendance this term: <strong>92%</strong></p>
+        <p>Absences: 3 days</p>
+      </div>
+
+      <div class="card">
+        <h2>Recent Announcements</h2>
+        <ul>
+          <li>Mid-year exams start 5 August 2025</li>
+          <li>School trip to Pretoria — 12 September 2025</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Upcoming Events</h2>
+        <ul>
+          <li>Parent-teacher meeting — 26 July 2025</li>
+          <li>Matric dance — 30 October 2025</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ramathope High School. All rights reserved.</p>
+  </footer>
+</body>
+</html>

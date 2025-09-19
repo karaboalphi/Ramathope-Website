@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ramathope High School</title>
+  <meta name="description" content="Ramathope High School — Education, community, and excellence in Limpopo, South Africa.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Basic, responsive styling so the page works without an external CSS file */
+    :root{--brand-1:#063970;--brand-2:#0b6b3a;--accent:#f2c94c;--muted:#666}
+    *{box-sizing:border-box}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto, "Helvetica Neue", Arial;line-height:1.5;margin:0;color:#222}
+    header{background:linear-gradient(90deg,var(--brand-2),var(--brand-1));color:#fff;padding:1.25rem 1rem}
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+    .logo{height:64px;width:64px;object-fit:contain;border-radius:8px;margin-right:1rem}
+    .brand-row{display:flex;align-items:center}
+    nav{margin-top:.75rem}
+    nav ul{display:flex;gap:12px;flex-wrap:wrap;list-style:none;padding:0;margin:0}
+    nav a{color:#fff;text-decoration:none;padding:.5rem .6rem;border-radius:6px;font-weight:600}
+    nav a:hover{background:rgba(255,255,255,0.07)}
+    main{padding:1.25rem 0}
+    section{margin-bottom:1.5rem}
+    h1,h2,h3{margin:.25rem 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .card{background:#fff;border-radius:10px;padding:1rem;box-shadow:0 6px 18px rgba(3,15,40,0.06)}
+    img.responsive{width:100%;height:auto;border-radius:8px}
+    footer{background:#f7f7f7;padding:1rem;text-align:center;color:var(--muted)}
+    /* Forms */
+    form input,form button,form textarea{width:100%;padding:.6rem;margin:.4rem 0;border-radius:6px;border:1px solid #ddd}
+    form button{background:var(--brand-1);color:#fff;border:0;padding:.7rem;font-weight:700}
+    /* Responsive */
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.brand-row{flex-direction:row;gap:.75rem}}
+    @media(max-width:600px){.grid{grid-template-columns:1fr}nav ul{justify-content:center}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container brand-row">
+      <img src="images/school-logo.png" alt="Ramathope High School logo" class="logo">
+      <div>
+        <h1>Ramathope High School</h1>
+        <p style="margin:.25rem 0 0;opacity:.9">Educating with excellence — Ramathope Village, Limpopo</p>
+      </div>
+    </div>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#academics">Academics</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#login">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Ramathope High School is a community-focused school dedicated to learner achievement, discipline and community service. We aim to develop knowledgeable, skilled and values-driven young people who will lead our community into the future.</p>
+    </section>
+
+    <section id="academics">
+      <h2>Academics</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Subjects</h3>
+          <ul>
+            <li>Mathematics & Mathematical Literacy</li>
+            <li>Physical Sciences & Life Sciences</li>
+            <li>English Home Language & First Additional Language</li>
+            <li>Geography, History & Life Orientation</li>
+            <li>Accounting, Business Studies & Computer Applications</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Extra-curricular</h3>
+          <p>Sports, choir, debate, science club and community outreach programmes to develop learners beyond the classroom.</p>
+        </div>
+        <div class="card">
+          <h3>Resources</h3>
+          <p>Computer lab, library, science laboratory and qualified teachers committed to learner support and academic growth.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="admissions">
+      <h2>Admissions</h2>
+      <p>Open applications for Grade 8 to 12 for 2026. Please complete the registration form below or contact the school office for assistance.</p>
+      <form action="register.php" method="post" aria-label="Admissions form">
+        <label for="fullname">Full name</label>
+        <input id="fullname" name="fullname" type="text" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="phone">Phone</label>
+        <input id="phone" name="phone" type="tel">
+
+        <label for="grade">Applying for grade</label>
+        <input id="grade" name="grade" type="text" placeholder="e.g. Grade 8" required>
+
+        <button type="submit">Submit application</button>
+      </form>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <p>Photos from our campus, classes and events.</p>
+      <div class="grid">
+        <img src="images/school1.jpg" alt="School building" class="responsive">
+        <img src="images/classroom.jpg" alt="Classroom" class="responsive">
+        <img src="images/students.jpg" alt="Students" class="responsive">
+      </div>
+      <p style="margin-top:.5rem;font-size:.9rem;color:var(--muted)">Tip: place your images inside an <code>/images</code> folder and keep filenames lowercase without spaces (e.g. <code>school1.jpg</code>).</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><strong>Phone:</strong> 082 123 4567</p>
+      <p><strong>Email:</strong> <a href="mailto:info@ramathopeschool.co.za">info@ramathopeschool.co.za</a></p>
+      <p><strong>Address:</strong> Ramathope Village, Limpopo, South Africa</p>
+    </section>
+
+    <section id="login">
+      <h2>Login</h2>
+      <p>Staff and students can login to access dashboards.</p>
+      <form action="login.php" method="post" style="max-width:360px">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Ramathope High School. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

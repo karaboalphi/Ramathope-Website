@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registration - Ramathope High School</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#222;line-height:1.5}
+    header{background:linear-gradient(90deg,#0b6b3a,#063970);color:#fff;padding:1rem;text-align:center}
+    main{max-width:900px;margin:1.25rem auto;padding:1rem}
+    h1{margin:.25rem 0}
+    form{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(3,15,40,0.06)}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+    label{display:block;font-weight:600;margin-top:.5rem}
+    input[type="text"],input[type="email"],input[type="tel"],input[type="date"],select,textarea,input[type="file"]{width:100%;padding:.6rem;border:1px solid #ddd;border-radius:6px;margin-top:.25rem}
+    textarea{min-height:100px}
+    .full{grid-column:1/-1}
+    .help{font-size:.875rem;color:#666;margin-top:.25rem}
+    button{background:#063970;color:#fff;border:0;padding:.8rem 1rem;border-radius:6px;font-weight:700;cursor:pointer;margin-top:.75rem}
+    .required{color:#a00;margin-left:4px}
+    @media(max-width:700px){.row{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Registration Form — Ramathope High School</h1>
+  </header>
+
+  <main>
+    <p>Please complete this form to apply for admission. Fields marked with <span aria-hidden="true">*</span><span class="required">*</span> are required. Attach scanned copies of the birth certificate and previous school report where applicable.</p>
+
+    <form id="registrationForm" action="register.php" method="post" enctype="multipart/form-data" novalidate>
+      <div class="row">
+        <div>
+          <label for="fullname">Full name <span class="required">*</span></label>
+          <input id="fullname" name="fullname" type="text" required>
+        </div>
+
+        <div>
+          <label for="idnumber">ID / Passport number <span class="required">*</span></label>
+          <input id="idnumber" name="idnumber" type="text" required maxlength="20">
+        </div>
+
+        <div>
+          <label for="dob">Date of birth <span class="required">*</span></label>
+          <input id="dob" name="dob" type="date" required>
+        </div>
+
+        <div>
+          <label for="grade">Applying for Grade <span class="required">*</span></label>
+          <select id="grade" name="grade" required>
+            <option value="">-- Select grade --</option>
+            <option>Grade 8</option>
+            <option>Grade 9</option>
+            <option>Grade 10</option>
+            <option>Grade 11</option>
+            <option>Grade 12</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="prevschool">Previous school</label>
+          <input id="prevschool" name="prevschool" type="text">
+        </div>
+
+        <div>
+          <label for="language">Home language</label>
+          <input id="language" name="language" type="text" placeholder="e.g. Sepedi, isiZulu, English">
+        </div>
+
+        <div>
+          <label for="parentname">Parent / Guardian name <span class="required">*</span></label>
+          <input id="parentname" name="parentname" type="text" required>
+        </div>
+
+        <div>
+          <label for="parentphone">Parent / Guardian phone <span class="required">*</span></label>
+          <input id="parentphone" name="parentphone" type="tel" required>
+        </div>
+
+        <div class="full">
+          <label for="address">Home address</label>
+          <textarea id="address" name="address" placeholder="Street, Village, Municipality, Province"></textarea>
+        </div>
+
+        <div>
+          <label for="birthcert">Birth certificate (PDF or image) <span class="required">*</span></label>
+          <input id="birthcert" name="birthcert" type="file" accept="application/pdf,image/*" required>
+          <div class="help">Max file size 2MB.</div>
+        </div>
+
+        <div>
+          <label for="report">Final school report (PDF or image)</label>
+          <input id="report" name="report" type="file" accept="application/pdf,image/*">
+          <div class="help">Optional but recommended for placing students in correct classes.</div>
+        </div>
+
+        <div class="full">
+          <label for="medical">Medical or special needs (if any)</label>
+          <textarea id="medical" name="medical" placeholder="Describe any allergies, medication, or special support required"></textarea>
+        </div>
+
+        <div class="full">
+          <label>
+            <input id="consent" name="consent" type="checkbox" required>
+            I confirm that the information supplied is true and I agree to the school processing these details for admission purposes. <span class="required">*</span>
+          </label>
+        </div>
+
+      </div>
+
+      <button type="submit">Submit registration</button>
+    </form>
+
+    <p class="help">Note: This form posts to <code>register.php</code> on the server. Make sure your server script validates all fields, checks file types and sizes, and stores uploaded files in a secure location.</p>
+  </main>
+
+  <script>
+    // Basic client-side validation for file size (2MB) and simple checks
+    document.getElementById('registrationForm').addEventListener('submit', function(e){
+      const birth = document.getElementById('birthcert');
+      const report = document.getElementById('report');
+      const maxBytes = 2 * 1024 * 1024; // 2MB
+
+      if(birth.files.length === 0){
+        alert('Please attach the birth certificate.');
+        birth.focus();
+        e.preventDefault();
+        return;
+      }
+
+      if(birth.files[0].size > maxBytes){
+        alert('The birth certificate file is too large. Max 2MB.');
+        birth.focus();
+        e.preventDefault();
+        return;
+      }
+
+      if(report.files.length && report.files[0].size > maxBytes){
+        alert('The school report file is too large. Max 2MB.');
+        report.focus();
+        e.preventDefault();
+        return;
+      }
+
+      // All good for client-side — server must still validate thoroughly
+    });
+  </script>
+
+  <footer style="text-align:center;padding:1rem;color:#666">
+    <p>&copy; 2025 Ramathope High School</p>
+  </footer>
+</body>
+</html>

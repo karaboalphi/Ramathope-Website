@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Announcements - Ramathope High School</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:0;color:#222;line-height:1.5}
+    header{background:linear-gradient(90deg,#0b6b3a,#063970);color:#fff;padding:1rem;text-align:center}
+    nav a{color:#fff;margin:0 .5rem;text-decoration:none}
+    main{max-width:900px;margin:1.25rem auto;padding:1rem}
+    h1{margin:.25rem 0}
+    .announcement{background:#fff;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.06);padding:1rem;margin-bottom:1rem}
+    .announcement h2{margin-top:0;color:#063970}
+    .date{font-size:.875rem;color:#666;margin-bottom:.5rem}
+    form{margin-top:2rem;background:#fff;padding:1rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+    label{display:block;font-weight:600;margin-top:.75rem}
+    input[type="text"],textarea{width:100%;padding:.6rem;border:1px solid #ccc;border-radius:6px;margin-top:.25rem}
+    textarea{min-height:100px}
+    button{background:#063970;color:#fff;border:0;padding:.8rem 1rem;border-radius:6px;font-weight:700;cursor:pointer;margin-top:.75rem}
+    button:hover{background:#0b6b3a}
+    footer{background:#f7f7f7;color:#555;text-align:center;padding:1rem;margin-top:2rem}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>School Announcements</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="academics.html">Academics</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Latest Announcements</h2>
+      
+      <div class="announcement">
+        <h2>Mid-Year Exams Start</h2>
+        <div class="date">Posted: 15 June 2025</div>
+        <p>Mid-year exams will begin on 5 August 2025. Timetables will be distributed to learners in the coming week.</p>
+      </div>
+
+      <div class="announcement">
+        <h2>School Trip to Pretoria</h2>
+        <div class="date">Posted: 10 June 2025</div>
+        <p>The Grade 10–12 learners will be visiting Pretoria on 12 September 2025. Permission slips must be signed by 25 August 2025.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Post a New Announcement (Staff Only)</h2>
+      <form action="post_announcement.php" method="post">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Post Announcement</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ramathope High School. All rights reserved.</p>
+  </footer>
+</body>
+</html>
